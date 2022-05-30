@@ -12,3 +12,6 @@ variable "codebuild_iam_role" {}
 variable "codebuild_iam_role_policy" {}
 
 variable "repository_name" {}
+
+variable "codebuild_terraform_plan_value" {}
+variable "codebuild_terraform_apply_value" {}

@@ -11,3 +11,6 @@ codebuild_iam_role        = "CodeBuildIamRole"
 codebuild_iam_role_policy = "CodeBuildIamRolePolicy"
 
 repository_name = "aws-cicd-test"
+
+codebuild_terraform_plan_value  = "TerraformPlan"
+codebuild_terraform_apply_value = "TerraformApply"

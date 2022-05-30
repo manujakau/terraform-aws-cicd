@@ -47,3 +47,13 @@ module "codecommit" {
   source          = "./codecommit"
   repository_name = var.repository_name
 }
+
+
+module "codebuild" {
+  source                          = "./codebuild"
+  codebuild_terraform_plan_value  = var.codebuild_terraform_plan_value
+  codebuild_terraform_apply_value = var.codebuild_terraform_apply_value
+  log_bucket                      = module.backend.log_bucket
+  log_bucket_id                   = module.backend.log_bucket_id
+  codebuild_iam_role_arn          = module.backend.codebuild_iam_role_arn
+}
