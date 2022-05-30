@@ -1,4 +1,4 @@
-terraform_version = "1.0.0"
+terraform_version = "1.2.1"
 backend_s3_bucket = "aws-cicd-backend-test"
 terraform_tfstate = "terraform.tfstate"
 dynamodb_table    = "terraform-infra-state"
