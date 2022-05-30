@@ -49,7 +49,7 @@ resource "aws_iam_role_policy" "codebuild_iam_role_policy" {
         "${aws_s3_bucket.state_bucket.arn}",
         "${aws_s3_bucket.state_bucket.arn}/*",
         "arn:aws:s3:::codepipeline-${var.aws_region}*",
-        "arn:aws:s3:::codepipeline-${var.aws_region}*/*",
+        "arn:aws:s3:::codepipeline-${var.aws_region}*/*"
       ]
     },
     {
@@ -92,4 +92,5 @@ POLICY
 depends_on = [
   var.codecommit_repo_dependency
 ]
+
 }
