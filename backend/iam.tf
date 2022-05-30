@@ -94,3 +94,62 @@ depends_on = [
 ]
 
 }
+
+/*
+        "${var.tf_codepipeline_artifact_bucket_arn}",
+        "${var.tf_codepipeline_artifact_bucket_arn}/*"
+
+        add to line 46 resource
+*/
+
+
+#IAM role for Terraform builder to assume
+resource "aws_iam_role" "terraform_iam_assumed_role" {
+  name = "TerraformAssumedIamRole"
+
+  assume_role_policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "${aws_iam_role.codebuild_iam_role.arn}"
+      },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}
+EOF
+
+  tags = {
+    Terraform = "true"
+  }
+}
+
+
+#IAM policy Terraform to use to build, modify resources
+resource "aws_iam_policy" "terraform_iam_assumed_policy" {
+  name = "TerraformAssumedIamPolicy"
+
+  policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowAllPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "*"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+EOF
+}
+
+resource "aws_iam_role_policy_attachment" "attach_terraform_iam_assumed_role_to_permissions_policy" {
+  role       = aws_iam_role.terraform_iam_assumed_role.name
+  policy_arn = aws_iam_policy.terraform_iam_assumed_policy.arn
+}
