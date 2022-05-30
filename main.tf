@@ -37,7 +37,8 @@ module "backend" {
   dynamo_db_table               = var.dynamodb_table
   codebuild_iam_role            = var.codebuild_iam_role
   codebuild_iam_role_policy     = var.codebuild_iam_role_policy
-  terraform_codecommit_repo_arn = module.codecommit.terraform_codecommit_repo_arn
+  codecommit_repo_dependency    = module.codecommit.codecommit_repo_dependency
+  terraform_codecommit_repo_arn = module.codecommit.codecommit_repo_arn
   #tf_codepipeline_artifact_bucket_arn = module.codepipeline.tf_codepipeline_artifact_bucket_arn
 }
 

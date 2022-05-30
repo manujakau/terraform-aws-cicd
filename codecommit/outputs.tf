@@ -5,3 +5,7 @@ output "codecommit_repo_arn" {
 output "codecommit_repo_name" {
   value = aws_codecommit_repository.repository.repository_name
 }
+
+output "codecommit_repo_dependency" {
+  value = aws_codecommit_repository.repository
+}
