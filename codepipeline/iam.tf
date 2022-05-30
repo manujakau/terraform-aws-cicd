@@ -1,5 +1,5 @@
 resource "aws_iam_role" "codepipeline_role" {
-  name = var.terraform_codepipeline
+  name = var.terraform_codepipeline_role
 
   assume_role_policy = <<EOF
 {
@@ -19,8 +19,8 @@ EOF
 
 
 resource "aws_iam_role_policy" "tf_codepipeline_policy" {
-  name = var.tf_codepipeline_role_policy_name
-  role = aws_iam_role.tf_codepipeline_role.id
+  name = var.terraform_codepipeline_role_policy
+  role = aws_iam_role.codepipeline_role.id
 
   policy = <<EOF
 {
