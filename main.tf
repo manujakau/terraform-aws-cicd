@@ -1,5 +1,5 @@
 terraform {
-  required_version = var.terraform_version
+  required_version = ">=1.0.0"
   /*
   backend "s3" {
     bucket         = var.backend_s3_bucket
