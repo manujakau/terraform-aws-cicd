@@ -58,3 +58,15 @@ module "codebuild" {
   log_bucket_id                   = module.backend.log_bucket_id
   codebuild_iam_role_arn          = module.backend.codebuild_iam_role_arn
 }
+
+
+# module "codepipeline" {
+#   source                             = "./codepipeline"
+#   terraform_codepipeline             = var.terraform_codepipeline
+#   codepipeline_artifact_bucket       = var.codepipeline_artifact_bucket
+#   terraform_codepipeline_role        = var.terraform_codepipeline_role
+#   terraform_codepipeline_role_policy = var.terraform_codepipeline_role_policy
+#   terraform_codecommit_repository    = module.codecommit.codecommit_repo_name
+#   codebuild_terraform_plan_value     = module.codebuild.codebuild_terraform_plan
+#   codebuild_terraform_apply_value    = module.codebuild.codebuild_terraform_apply
+# }

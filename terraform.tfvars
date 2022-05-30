@@ -14,3 +14,8 @@ repository_name = "aws-cicd-test"
 
 codebuild_terraform_plan_value  = "TerraformPlan"
 codebuild_terraform_apply_value = "TerraformApply"
+
+terraform_codepipeline       = "TerraformCodePipeline"
+codepipeline_artifact_bucket = "aws-cicd-artifact-test"
+terraform_codepipeline_role        = "TerraformCodePipelineIamRole"
+terraform_codepipeline_role_policy = "TerraformCodePipelineIamRolePolicy"
