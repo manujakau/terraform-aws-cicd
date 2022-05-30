@@ -49,7 +49,9 @@ resource "aws_iam_role_policy" "codebuild_iam_role_policy" {
         "${aws_s3_bucket.state_bucket.arn}",
         "${aws_s3_bucket.state_bucket.arn}/*",
         "arn:aws:s3:::codepipeline-${var.aws_region}*",
-        "arn:aws:s3:::codepipeline-${var.aws_region}*/*"
+        "arn:aws:s3:::codepipeline-${var.aws_region}*/*",
+        "${var.codepipeline_artifact_bucket_arn}",
+        "${var.codepipeline_artifact_bucket_arn}/*"
       ]
     },
     {
@@ -90,17 +92,11 @@ resource "aws_iam_role_policy" "codebuild_iam_role_policy" {
 POLICY
 
 depends_on = [
-  var.codecommit_repo_dependency
+  var.codecommit_repo_dependency,
+  var.artifact_bucket_dependency
 ]
 
 }
-
-/*
-        "${var.terraform_codepipeline_artifact_bucket_arn}",
-        "${var.terraform_codepipeline_artifact_bucket_arn}/*"
-
-        add to line 46 resource after codepipeline module developed
-*/
 
 
 #IAM role for Terraform builder to assume
