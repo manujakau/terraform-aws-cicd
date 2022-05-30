@@ -96,10 +96,10 @@ depends_on = [
 }
 
 /*
-        "${var.tf_codepipeline_artifact_bucket_arn}",
-        "${var.tf_codepipeline_artifact_bucket_arn}/*"
+        "${var.terraform_codepipeline_artifact_bucket_arn}",
+        "${var.terraform_codepipeline_artifact_bucket_arn}/*"
 
-        add to line 46 resource
+        add to line 46 resource after codepipeline module developed
 */
 
 
