@@ -29,12 +29,12 @@ resource "aws_codepipeline" "terraform_codepipeline" {
     name = "Terraform_Plan"
 
     action {
-      name             = "Terraform-Plan"
-      category         = "Build"
-      owner            = "AWS"
-      provider         = "CodeBuild"
-      input_artifacts  = ["SourceArtifact"]
-      version          = "1"
+      name            = "Terraform-Plan"
+      category        = "Build"
+      owner           = "AWS"
+      provider        = "CodeBuild"
+      input_artifacts = ["SourceArtifact"]
+      version         = "1"
 
       configuration = {
         ProjectName = var.codebuild_terraform_plan_value
@@ -42,17 +42,17 @@ resource "aws_codepipeline" "terraform_codepipeline" {
     }
   }
 
-stage {
-  name = "Manual_Approval"
+  stage {
+    name = "Manual_Approval"
 
-  action {
-    name     = "Manual-Approval"
-    category = "Approval"
-    owner    = "AWS"
-    provider = "Manual"
-    version  = "1"
+    action {
+      name     = "Manual-Approval"
+      category = "Approval"
+      owner    = "AWS"
+      provider = "Manual"
+      version  = "1"
+    }
   }
-}
 
   stage {
     name = "Terraform_Apply"
