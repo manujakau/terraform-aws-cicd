@@ -30,16 +30,16 @@ provider "aws" {
 
 
 module "backend" {
-  source                        = "./backend"
-  aws_region                    = var.aws_region
-  tfstate_bucket                = var.backend_s3_bucket
-  log_bucket                    = var.log_bucket
-  dynamo_db_table               = var.dynamodb_table
-  codebuild_iam_role            = var.codebuild_iam_role
-  codebuild_iam_role_policy     = var.codebuild_iam_role_policy
-  codecommit_repo_dependency    = module.codecommit.codecommit_repo_dependency
-  terraform_codecommit_repo_arn = module.codecommit.codecommit_repo_arn
-  artifact_bucket_dependency = module.codepipeline.artifact_bucket_dependency
+  source                           = "./backend"
+  aws_region                       = var.aws_region
+  tfstate_bucket                   = var.backend_s3_bucket
+  log_bucket                       = var.log_bucket
+  dynamo_db_table                  = var.dynamodb_table
+  codebuild_iam_role               = var.codebuild_iam_role
+  codebuild_iam_role_policy        = var.codebuild_iam_role_policy
+  codecommit_repo_dependency       = module.codecommit.codecommit_repo_dependency
+  terraform_codecommit_repo_arn    = module.codecommit.codecommit_repo_arn
+  artifact_bucket_dependency       = module.codepipeline.artifact_bucket_dependency
   codepipeline_artifact_bucket_arn = module.codepipeline.codepipeline_artifact_bucket_arn
 }
 
