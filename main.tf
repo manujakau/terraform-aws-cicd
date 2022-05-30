@@ -51,6 +51,7 @@ module "codecommit" {
 
 module "codebuild" {
   source                          = "./codebuild"
+  terraform_version               = var.terraform_version
   codebuild_terraform_plan_value  = var.codebuild_terraform_plan_value
   codebuild_terraform_apply_value = var.codebuild_terraform_apply_value
   log_bucket                      = module.backend.log_bucket

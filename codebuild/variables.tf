@@ -1,3 +1,5 @@
+variable "terraform_version" {}
+
 variable "codebuild_terraform_plan_value" {}
 variable "codebuild_terraform_apply_value" {}
 
