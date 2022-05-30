@@ -7,4 +7,8 @@ variable "profile" {}
 variable "aws_region" {}
 
 
-variavariable "log_bucket" {}
+variable "log_bucket" {}
+variable "codebuild_iam_role" {}
+variable "codebuild_iam_role_policy" {}
+
+variable "repository_name" {}

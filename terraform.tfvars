@@ -6,4 +6,8 @@ dynamodb_table    = "terraform-infra-state"
 profile    = "default"
 aws_region = "eu-north-1"
 
-log_bucket = "aws-cicd-backend-test-logs"
+log_bucket                = "aws-cicd-backend-test-logs"
+codebuild_iam_role        = "CodeBuildIamRole"
+codebuild_iam_role_policy = "CodeBuildIamRolePolicy"
+
+repository_name = "aws-cicd-test"
