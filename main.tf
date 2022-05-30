@@ -39,7 +39,8 @@ module "backend" {
   codebuild_iam_role_policy     = var.codebuild_iam_role_policy
   codecommit_repo_dependency    = module.codecommit.codecommit_repo_dependency
   terraform_codecommit_repo_arn = module.codecommit.codecommit_repo_arn
-  #tf_codepipeline_artifact_bucket_arn = module.codepipeline.tf_codepipeline_artifact_bucket_arn
+  artifact_bucket_dependency = module.codepipeline.artifact_bucket_dependency
+  codepipeline_artifact_bucket_arn = module.codepipeline.codepipeline_artifact_bucket_arn
 }
 
 
