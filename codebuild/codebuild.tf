@@ -91,7 +91,7 @@ resource "aws_codebuild_project" "codebuild_project_terraform_apply" {
 
   source {
     type      = "CODEPIPELINE"
-    buildspec = "buildspec_terraform_apply.yml"
+    buildspec = "buildspec_terraform_apply.yaml"
   }
 
   tags = {
