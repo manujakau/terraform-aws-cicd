@@ -31,6 +31,7 @@ provider "aws" {
 
 module "backend" {
   source                        = "./backend"
+  aws_region                    = var.aws_region
   tfstate_bucket                = var.backend_s3_bucket
   log_bucket                    = var.log_bucket
   dynamo_db_table               = var.dynamodb_table
