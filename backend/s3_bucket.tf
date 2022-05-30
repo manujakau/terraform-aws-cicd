@@ -1,4 +1,4 @@
-resource "aws_s3_bucket" "state_bucket" {
+resource "aws_s3_bucket_server_side_encryption_configuration" "state_bucket" {
   bucket = var.tfstate_bucket
 
   server_side_encryption_configuration {
@@ -19,7 +19,7 @@ resource "aws_s3_bucket" "state_bucket" {
 }
 
 
-resource "aws_s3_bucket" "log_bucket" {
+resource "aws_s3_bucket_server_side_encryption_configuration" "log_bucket" {
   bucket = var.log_bucket
   acl    = "private"
 
