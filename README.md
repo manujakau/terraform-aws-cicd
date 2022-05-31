@@ -14,7 +14,8 @@ terraform apply
 
 Step02
 ```
-Remove comment sections in main.tf. In s3 backend Variables not allowed.
+Remove comments beween ## Un-comment to start Backend migration / ## End of Backend migration in main.tf. 
+s3 backend within Terraform block Variables are not allowed.
 then do : 
     terraform init
 ```
