@@ -25,6 +25,6 @@ Step02
 ### Destroy Infrastrcture
 ```
 1. comment again previusly un-commented sections.
-2. run : terraform init -migrate-state
+2. terraform init -migrate-state
 3. terraform destroy
 ```
