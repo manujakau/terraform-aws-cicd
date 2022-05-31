@@ -1,6 +1,6 @@
 terraform {
   required_version = ">=1.0.0"
-  /*
+
   backend "s3" {
     bucket         = var.backend_s3_bucket
     key            = var.terraform_tfstate
@@ -8,7 +8,6 @@ terraform {
     dynamodb_table = var.dynamodb_table
     encrypt        = true
   }
-*/
 }
 
 data "aws_caller_identity" "current" {}
@@ -22,10 +21,10 @@ provider "aws" {
   profile = var.profile
   region  = var.aws_region
 
-  #   assume_role {
-  #     role_arn     = "arn:aws:iam::${local.account_id}:role/TerraformAssumedIamRole"
-  #     session_name = "terraform"
-  #   }
+  assume_role {
+    role_arn     = "arn:aws:iam::${local.account_id}:role/TerraformAssumedIamRole"
+    session_name = "terraform"
+  }
 }
 
 
