@@ -14,9 +14,10 @@ terraform apply
 
 Step02
 ```
-Remove comments beween ## Un-comment to start Backend migration / ## End of Backend migration in main.tf. 
-s3 backend within Terraform block Variables are not allowed.
-then do : 
+1. Remove comments beween ## Un-comment to start Backend migration / ## End of Backend migration in main.tf.
+2. Add AWS account ID to Provider block.
+    s3 backend within Terraform block Variables are not allowed.
+3. then do : 
     terraform init
 ```
 
