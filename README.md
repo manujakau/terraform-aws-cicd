@@ -1,5 +1,5 @@
 ## terraform-aws-cicd
-![aws-cicd-terraform](https://user-images.githubusercontent.com/44127516/171119808-c603a499-4eda-45ed-be98-045d3ad39e59.jpg)
+![aws-cicd-terraform](https://user-images.githubusercontent.com/44127516/171139214-d0326329-6f1c-454b-957d-3fd96637daf3.jpg)
 
 ### Deploy Infrastrcture
 
