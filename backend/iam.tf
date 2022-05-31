@@ -91,10 +91,10 @@ resource "aws_iam_role_policy" "codebuild_iam_role_policy" {
 }
 POLICY
 
-depends_on = [
-  var.codecommit_repo_dependency,
-  var.artifact_bucket_dependency
-]
+  depends_on = [
+    var.codecommit_repo_dependency,
+    var.artifact_bucket_dependency
+  ]
 
 }
 

@@ -1,5 +1,6 @@
 resource "aws_s3_bucket" "codepipeline_artifact_bucket" {
-  bucket = var.codepipeline_artifact_bucket
+  bucket        = var.codepipeline_artifact_bucket
+  force_destroy = true
 }
 
 resource "aws_s3_bucket_acl" "codepipeline_artifact_bucket" {
