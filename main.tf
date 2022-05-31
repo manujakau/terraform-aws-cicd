@@ -19,7 +19,7 @@ provider "aws" {
 
 ## Un-comment to start Backend migration
   # assume_role {
-  #   role_arn     = "arn:aws:iam::${account_id-enter-manualy-here}:role/TerraformAssumedIamRole"
+  #   role_arn     = "arn:aws:iam::<account_id-enter-manualy-here>:role/TerraformAssumedIamRole"
   #   session_name = "terraform"
   # }
 ## End of Backend migration
