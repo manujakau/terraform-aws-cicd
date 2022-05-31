@@ -1,13 +1,13 @@
 terraform {
   required_version = ">=1.0.0"
 
-  backend "s3" {
-    bucket         = "aws-cicd-backend-test"
-    key            = "terraform.tfstate"
-    region         = "eu-north-1"
-    dynamodb_table = "terraform-infra-state"
-    encrypt        = true
-  }
+  # backend "s3" {
+  #   bucket         = "aws-cicd-backend-test"
+  #   key            = "terraform.tfstate"
+  #   region         = "eu-north-1"
+  #   dynamodb_table = "terraform-infra-state"
+  #   encrypt        = true
+  # }
 }
 
 
@@ -15,10 +15,10 @@ provider "aws" {
   profile = var.profile
   region  = var.aws_region
 
-  assume_role {
-    role_arn     = "arn:aws:iam::${account_id-enter-manualy-here}:role/TerraformAssumedIamRole"
-    session_name = "terraform"
-  }
+  # assume_role {
+  #   role_arn     = "arn:aws:iam::${account_id-enter-manualy-here}:role/TerraformAssumedIamRole"
+  #   session_name = "terraform"
+  # }
 }
 
 
