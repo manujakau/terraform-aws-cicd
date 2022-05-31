@@ -164,6 +164,11 @@ resource "aws_iam_role_policy" "tf_codepipeline_policy" {
         "ecr:DescribeImages"
       ],
       "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "ec2:Describe*",
+      "Resource": "*"
     }
   ],
   "Version": "2012-10-17"
