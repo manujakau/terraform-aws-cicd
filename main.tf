@@ -2,10 +2,10 @@ terraform {
   required_version = ">=1.0.0"
 
   backend "s3" {
-    bucket         = var.backend_s3_bucket
-    key            = var.terraform_tfstate
-    region         = var.aws_region
-    dynamodb_table = var.dynamodb_table
+    bucket         = "aws-cicd-backend-test"
+    key            = "terraform.tfstate"
+    region         = "eu-north-1"
+    dynamodb_table = "terraform-infra-state"
     encrypt        = true
   }
 }
