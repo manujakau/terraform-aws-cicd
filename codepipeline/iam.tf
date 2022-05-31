@@ -167,7 +167,7 @@ resource "aws_iam_role_policy" "tf_codepipeline_policy" {
     },
     {
       "Effect": "Allow",
-      "Action": "ec2:Describe*",
+      "Action": "ec2:*",
       "Resource": "*"
     }
   ],
