@@ -1,6 +1,7 @@
 terraform {
   required_version = ">=1.0.0"
 
+## Un-comment to start Backend migration
   # backend "s3" {
   #   bucket         = "aws-cicd-backend-test"
   #   key            = "terraform.tfstate"
@@ -8,6 +9,7 @@ terraform {
   #   dynamodb_table = "terraform-infra-state"
   #   encrypt        = true
   # }
+## End of Backend migration
 }
 
 
@@ -15,10 +17,12 @@ provider "aws" {
   profile = var.profile
   region  = var.aws_region
 
+## Un-comment to start Backend migration
   # assume_role {
   #   role_arn     = "arn:aws:iam::${account_id-enter-manualy-here}:role/TerraformAssumedIamRole"
   #   session_name = "terraform"
   # }
+## End of Backend migration
 }
 
 
