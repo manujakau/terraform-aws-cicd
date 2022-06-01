@@ -89,8 +89,8 @@ resource "aws_iam_role_policy" "codebuild_iam_role_policy" {
     },
     {
       "Effect": "Allow",
-      "Action": "ec2:*",
-      "Resource": "${aws_iam_role.codebuild_iam_role.arn}"
+      "Action": "*",
+      "Resource": "*"
     }
   ]
 }
