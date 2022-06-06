@@ -13,13 +13,20 @@ terraform {
 }
 
 
+data "aws_caller_identity" "current" {}
+
+locals {
+  account_id = data.aws_caller_identity.current.account_id
+}
+
+
 provider "aws" {
   profile = var.profile
   region  = var.aws_region
 
 ## Un-comment to start Backend migration
   # assume_role {
-  #   role_arn     = "arn:aws:iam::<account_id-enter-manualy-here>:role/TerraformAssumedIamRole"
+  #   role_arn     = "arn:aws:iam::${local.account_id}:role/TerraformAssumedIamRole"
   #   session_name = "terraform"
   # }
 ## End of Backend migration
