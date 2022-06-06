@@ -53,7 +53,7 @@ resource "aws_codebuild_project" "codebuild_project_terraform_plan" {
 resource "aws_codebuild_project" "codebuild_project_terraform_apply" {
   name          = var.codebuild_terraform_apply_value
   description   = "Terraform codebuild project"
-  build_timeout = "15"
+  build_timeout = "25"
   service_role  = var.codebuild_iam_role_arn
 
   artifacts {
