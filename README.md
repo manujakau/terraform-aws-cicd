@@ -33,7 +33,7 @@ Step02
 ### Using to Deploy Infrastructure Via Code
 Users can use codecommit repository to manage any was infrastructure deployment assemble via terraform by using this cicd pipeline.
 
-Once you have a finalize terraform code add below code snippets into the main.tf or provider.tf etc..
+Once you have a finalize terraform code, add below code snippets into the main.tf or provider.tf etc..
 
 Change bucket, region, dynamodb_table as per the inputs use in given aws infrastructure.
 
