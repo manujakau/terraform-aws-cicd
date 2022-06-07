@@ -15,7 +15,7 @@ resource "aws_codebuild_project" "codebuild_project_terraform_plan" {
   }
 
   environment {
-    compute_type                = "BUILD_GENERAL1_LARGE"
+    compute_type                = "BUILD_GENERAL1_SMALL"
     image                       = "aws/codebuild/standard:2.0"
     type                        = "LINUX_CONTAINER"
     image_pull_credentials_type = "CODEBUILD"
@@ -66,7 +66,7 @@ resource "aws_codebuild_project" "codebuild_project_terraform_apply" {
   }
 
   environment {
-    compute_type                = "BUILD_GENERAL1_LARGE"
+    compute_type                = "BUILD_GENERAL1_SMALL"
     image                       = "aws/codebuild/standard:2.0"
     type                        = "LINUX_CONTAINER"
     image_pull_credentials_type = "CODEBUILD"
